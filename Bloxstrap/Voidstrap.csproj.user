@@ -4,7 +4,7 @@
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup>
-    <ActiveDebugProfile>Voidstrap (Launch)</ActiveDebugProfile>
+    <ActiveDebugProfile>Voidstrap (Menu)</ActiveDebugProfile>
     <_LastSelectedProfileId>C:\Users\Hiile\Desktop\HEll\Voidstrap-main\Voidstrap-main\Bloxstrap\Properties\PublishProfiles\Publish-x64.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -43,7 +43,16 @@
     <EmbeddedResource Update="Resources\Strings.de.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings.fi.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\Strings.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Strings.sv-SE.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

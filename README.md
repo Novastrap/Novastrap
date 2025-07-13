@@ -3,7 +3,7 @@
 **Voidstrap** is a modern and feature-rich fork of [Bloxstrap](https://github.com/bloxstraplabs/bloxstrap), designed to elevate your **Roblox** experience. With a refined interface, enhanced stability, and powerful features, Voidstrap gives you full control over how you play.
 
 <p align="center">
-  <img src="https://github.com/voidstrap/Voidstrap/blob/main/Images/1748248817498.png" alt="Voidstrap Logo">
+  <img src="https://github.com/voidstrap/Voidstrap/blob/main/Images/Voidstrap.png" alt="Voidstrap Logo">
 </p>
 
 <p align="center"><strong>⭐ Like Voidstrap? Star the repo and help it grow!</strong></p>
@@ -25,7 +25,7 @@
   <a href="https://github.com/midaskira/Voidstrap/stargazers">
     <img src="https://img.shields.io/github/stars/midaskira/Voidstrap?color=FFD700&label=Stars" alt="Stars">
   </a>
-  <a href="https://discord.gg/PE8ZeNSdS2">
+  <a href="https://discord.gg/wdmYT9WKTX">
     <img src="https://img.shields.io/discord/1368499843084845076?logo=discord&logoColor=white&label=Discord&color=4d3dff" alt="Join Discord">
   </a>
   <a href="https://www.virustotal.com/gui/file/a19d94eaed61dfa779610f1271a9379f2dae45d876e45564cd324b69c07e9a29">
@@ -109,7 +109,7 @@
 
 ## 🤝 Community & Support
 
-- 💬 **Join our Discord:** [Voidstrap Server](https://discord.gg/PE8ZeNSdS2) for help, news, and chat.
+- 💬 **Join our Discord:** [Voidstrap Server](https://discord.gg/JkUPqtS7QR) for help, news, and chat.
 - 🐞 **Found a bug or have an idea?** Use our [Issues tab](https://github.com/midaskira/Voidstrap/issues).
 - ⭐ **Star the repo:** Show your support!
 
@@ -129,7 +129,7 @@
 
 ### 💡 Inspirations
 - [Bloxstrap](https://github.com/bloxstraplabs/bloxstrap)
-- [Fishstrap](https://github.com/fishstrap/fishstrap)
+- [](https://github.com//)
 
 ---
 
