@@ -31,7 +31,8 @@
 	<!-- Release-specific optimizations -->
 	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
 		<PublishTrimmed>false</PublishTrimmed>
-		<PublishReadyToRun>true</PublishReadyToRun>
+		<PublishReadyToRun Condition="'$(CI)' != 'true'">true</PublishReadyToRun>
+		<PublishReadyToRun Condition="'$(CI)' == 'true'">false</PublishReadyToRun>
 		<EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
 		<DebugType>portable</DebugType>
 		<DebugSymbols>true</DebugSymbols>
@@ -256,7 +257,8 @@
 
 
 
-	<ItemGroup>
+	<!-- Local reference - only for development -->
+	<ItemGroup Condition="Exists('..\..\..\..\Downloads\DiscordRPC.dll')">
 	  <Reference Include="DiscordRPC">
 	    <HintPath>..\..\..\..\Downloads\DiscordRPC.dll</HintPath>
 	  </Reference>
