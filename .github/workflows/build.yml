@@ -41,11 +41,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore Voidstrap.sln
     
-    - name: Build Debug
-      run: dotnet build Voidstrap.sln --configuration Debug --no-restore
-    
     - name: Build Release
-      run: dotnet build Voidstrap.sln --configuration Release --no-restore
+      run: dotnet build Voidstrap.sln --configuration Release --no-restore -m
     
     - name: Publish Release
       run: dotnet publish Bloxstrap/Voidstrap.csproj --configuration Release --no-build --output ./publish
