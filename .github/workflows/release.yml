@@ -1,0 +1,74 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: windows-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '6.0.x'
+    
+    - name: Restore and Build
+      run: |
+        dotnet restore Voidstrap.sln
+        dotnet publish Bloxstrap/Voidstrap.csproj --configuration Release --output ./publish
+    
+    - name: Extract Version
+      id: version
+      run: |
+        $version = "${{ github.ref_name }}" -replace '^v', ''
+        echo "version=$version" >> $env:GITHUB_OUTPUT
+        
+    - name: Generate Release Notes
+      id: release_notes
+      run: |
+        $version = "${{ steps.version.outputs.version }}"
+        $releaseNotes = @"
+        ## Voidstrap v$version
+        
+        ### What's New
+        - Performance and stability improvements
+        - Updated build system and CI/CD optimizations
+        - Enhanced GitHub Actions workflows
+        
+        ### Technical Details
+        - Built with .NET 6.0
+        - Optimized single-file executable
+        - Improved compression and startup time
+        
+        ### Download & Installation
+        1. Download ``Voidstrap.exe`` below
+        2. Run as administrator (Windows will show security warning - click "More info" → "Run anyway")
+        3. Requires Windows 10/11 with .NET 6.0 runtime
+        
+        ### Support
+        - Join our Discord: discord.gg/plexity
+        - Report issues on GitHub
+        
+        **Full Changelog**: https://github.com/${{ github.repository }}/compare/${{ github.event.before }}...${{ github.sha }}
+        "@
+        
+        $releaseNotes | Out-File -FilePath release_notes.md -Encoding utf8
+        echo "notes_file=release_notes.md" >> $env:GITHUB_OUTPUT
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: ./publish/Voidstrap.exe
+        body_path: ${{ steps.release_notes.outputs.notes_file }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
